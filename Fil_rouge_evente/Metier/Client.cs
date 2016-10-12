@@ -8,11 +8,19 @@ namespace Fil_rouge_evente.Metier
 {
     public class Client: Utilisateur
     {
-        [Required(ErrorMessage ="La date de naissance est obligatoire")]
-        [Display(Name ="Date de naissance")]
+        [Required(ErrorMessage = "Le champ « date de naissance » est obligatoire")]
+        [Display(Name = "Né(e) le")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateNaissance { get; set; }
+
+        [Display(Name = "Numéro carte fidélité")]
         public int? NumeroCarteFidelite { get; set; }
+
+        [Display(Name = "Nombre de points")]
         public int NombrePoints { get; set; }
+
+        [Display(Name = "Compte à supprimer")]
         public bool CompteASupprimer { get; set; }
         
         public enum Civilite { Mademoiselle, Madame, Monsieur };

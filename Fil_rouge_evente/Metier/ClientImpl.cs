@@ -216,5 +216,10 @@ namespace Fil_rouge_evente.Metier
         {
             return afficherCommandeMoyenPaiement(id);
         }
+
+        public void desactiverMonCompte(int idClient)
+        {
+            idao.desactiverMonCompte(idClient);
+        }
     }
 }

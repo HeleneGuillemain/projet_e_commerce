@@ -13,7 +13,7 @@ namespace Fil_rouge_evente.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201610121455569_FirstMigration"; }
+            get { return "201610121607246_FirstMigration"; }
         }
         
         string IMigrationMetadata.Source

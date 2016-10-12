@@ -169,5 +169,11 @@ namespace Fil_rouge_evente.Controllers
             iclient.modifierAdresse(a);
             return RedirectToAction("AfficherAdresses");
         }
+        public ActionResult desactiverMonCompte(int id)
+        {
+            iclient.desactiverMonCompte(id);
+            ViewBag.Message = "Votre demande de suppression sera soumise à l'équipe.";
+            return RedirectToAction("ModifierCompte");
+        }
     }
 }

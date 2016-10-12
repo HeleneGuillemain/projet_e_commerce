@@ -23,5 +23,7 @@
         <span>@Html.DisplayNameFor(model => model.DateNaissance) : </span><span>@Html.TextBoxFor(model => model.DateNaissance)</span><span>@Html.ValidationMessageFor(model => model.DateNaissance)</span><br />
         <span>@Html.DisplayNameFor(model => model.Email) : </span><span>@Html.TextBoxFor(model => model.Email)</span><span>@Html.ValidationMessageFor(model => model.Email)</span><br />
         <button type="submit">Mettre à jour</button>
+
+        <span>@Html.ActionLink("Supprimer mon Compte", "desactiverMonCompte", new { id = Model.UtilisateurId })</span><span>@ViewBag.Message</span>
     }
 </div>

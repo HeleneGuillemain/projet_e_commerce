@@ -41,5 +41,6 @@ namespace Fil_rouge_evente.Metier
         Facture ajouterFacture(Facture f);
         void supprimerMoyenPaiement(int MoyenPaiementId);
         ICollection<CommandeMoyenPaiementModel> afficherCommandeMoyenPaiement(int id);
+        void desactiverMonCompte(int idClient);
     }
 }
