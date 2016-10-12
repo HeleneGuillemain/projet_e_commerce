@@ -34,5 +34,7 @@ namespace Fil_rouge_evente.Dao
         public DbSet<Role> roles { get; set; }
         public DbSet<StatutCommande> statutCommandes { get; set; }
         public DbSet<Utilisateur> utilisateurs { get; set; }
+
+        public DbSet<Client> clients { get; set; }
     }
 }
