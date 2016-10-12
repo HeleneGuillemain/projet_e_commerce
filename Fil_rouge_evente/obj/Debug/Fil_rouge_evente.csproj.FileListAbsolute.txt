@@ -467,5 +467,5 @@ C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\bin\fr\Syste
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.csprojResolveAssemblyReference.cache
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.dll
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.pdb
-C:\Users\adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.FirstMigration.resources
-C:\Users\adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.csproj.GenerateResource.Cache
+C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.test.resources
+C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.csproj.GenerateResource.Cache

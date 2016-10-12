@@ -1,0 +1,16 @@
+﻿@model Fil_rouge_evente.Metier.CarteBancaire
+@{
+    ViewBag.Title = "AjouterCarteBancaire";
+}
+
+<h2>AjouterCarteBancaire</h2>
+
+<div>
+    @using (Html.BeginForm("AjouterCarteBancaire", "MoyenPaiement"))
+    {
+        <span>@Html.DisplayNameFor(model => model.NomProprietaire) : </span><span>@Html.TextBoxFor(model => model.NomProprietaire)</span><span>@Html.ValidationMessageFor(model => model.NomProprietaire)</span><br />
+        <span>@Html.DisplayNameFor(model => model.NumeroCarte) : </span><span>@Html.TextBoxFor(model => model.NumeroCarte)</span><span>@Html.ValidationMessageFor(model => model.NumeroCarte)</span><br />
+        <span>@Html.DisplayNameFor(model => model.DateExpiration) : </span><span>@Html.TextBoxFor(model => model.DateExpiration, "{0:MM-yy}", new { @class = "form-control datecontrol", type = "month" })</span><span>@Html.ValidationMessageFor(model => model.DateExpiration)</span><br />
+        <button type="submit">Ajouter</button>
+    }
+    </di

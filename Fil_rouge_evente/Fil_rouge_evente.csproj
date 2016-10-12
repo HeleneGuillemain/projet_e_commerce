@@ -208,9 +208,9 @@
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Metier\UtilisateurImpl.cs" />
     <Compile Include="Metier\Virement.cs" />
-    <Compile Include="Migrations\201610121607246_FirstMigration.cs" />
-    <Compile Include="Migrations\201610121607246_FirstMigration.Designer.cs">
-      <DependentUpon>201610121607246_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201610121709204_test.cs" />
+    <Compile Include="Migrations\201610121709204_test.Designer.cs">
+      <DependentUpon>201610121709204_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdresseClientModel.cs" />
@@ -295,6 +295,10 @@
     <Content Include="Views\Administrateur\loginAdmin.cshtml" />
     <Content Include="Views\MoyenPaiement\AjouterMoyenPaiement.cshtml" />
     <Content Include="Views\Administrateur\listerClient.cshtml" />
+    <Content Include="Views\MoyenPaiement\AjouterCarteBancaire.cshtml" />
+    <Content Include="Views\MoyenPaiement\AjouterCheque.cshtml" />
+    <Content Include="Views\MoyenPaiement\AjouterFacture.cshtml" />
+    <Content Include="Views\MoyenPaiement\AjouterVirement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,8 +312,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610121607246_FirstMigration.resx">
-      <DependentUpon>201610121607246_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610121709204_test.resx">
+      <DependentUpon>201610121709204_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
