@@ -18,8 +18,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterAbonnement()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 return View();
             }
@@ -45,8 +44,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult listerTousAbonnement()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.listerTousAbonnements();
                 return View(res);
@@ -59,8 +57,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult supprimerAbonnement(int id)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 iadmin.supprimerAbonnement(id);
                 return RedirectToAction("listerTousAbonnement");
@@ -73,8 +70,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult modifierAbonnement(int id)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 Abonnement res = iadmin.afficherAbonnement(id);
                 return View(res);
@@ -89,8 +85,7 @@ namespace Fil_rouge_evente.Controllers
         [HttpPost]
         public ActionResult modifierAbonnement(Abonnement a)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 iadmin.modifierAbonnement(a);
                 return RedirectToAction("listerTousAbonnement");

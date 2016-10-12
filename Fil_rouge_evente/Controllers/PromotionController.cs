@@ -22,8 +22,13 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult afficherPromotionProduit()
         {
-            var res = iadmin.afficherPromotionProduit();
-            return View(res);
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
+            {
+                var res = iadmin.afficherPromotionProduit();
+                return View(res);
+            }
+            else return RedirectToAction("Login", "Administrateur");
+
         }
     }
 }

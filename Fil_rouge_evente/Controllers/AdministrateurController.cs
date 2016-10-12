@@ -18,7 +18,9 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterAdministrateur()
         {
-            return View();
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
+                return View();
+            else return RedirectToAction("loginAdmin");
         }
 
         [HttpPost]
@@ -30,8 +32,12 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult listerAdministrateur()
         {
-            var res = iadmin.listerComptes();
-            return View(res);
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
+            {
+                var res = iadmin.listerComptes();
+                return View(res);
+            }
+            else return RedirectToAction("loginAdmin");
         }
 
         public ActionResult loginAdmin()
@@ -42,20 +48,20 @@ namespace Fil_rouge_evente.Controllers
         [HttpPost]
         public ActionResult loginAdmin(Utilisateur u)
         {
-           
+
 
 
             var user = iadmin.connexionCompte(u);
-            if(user != null)
+            if (user != null)
             {
                 ICollection<Role> resultat = iadmin.getRole(user);
                 int res = 0;
                 foreach (var p in resultat)
                     res = p.Droit;
                 Session["UtilisateurId"] = user.UtilisateurId;
-                Session["RoleId"] =res;
+                Session["RoleId"] = res;
                 return RedirectToAction("LoggedInAdmin");
-            } 
+            }
             else
             {
                 ModelState.AddModelError("", "Utilisateur ou mot de passe incorrect");
@@ -65,8 +71,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult loggedInAdmin()
         {
-           
-            if ((Session["UtilisateurId"] != null) && (Convert.ToInt32(Session["RoleId"]) == 2))
+
+            if ((Convert.ToInt32(Session["RoleId"]) == 2))
             {
                 return View();
             }
@@ -84,6 +90,6 @@ namespace Fil_rouge_evente.Controllers
             return RedirectToAction("loginAdmin");
         }
 
-       
+
     }
 }

@@ -10,6 +10,7 @@ namespace Fil_rouge_evente.Metier
     public interface IClient: IUtilisateur
     {
         ICollection<Produit> rechercherProduits(decimal PrixMin, decimal PrixMax);
+        ICollection<Role> getRole(Utilisateur u);
         ICollection<Produit> rechercherProduitsByCategorie(string Categorie);
         Commande creerCommande(Commande c);
         Commande modifierCommande(Commande c);
@@ -26,7 +27,7 @@ namespace Fil_rouge_evente.Metier
         void supprimerPanier(int PanierId);
         Panier afficherPanier(int PanierId);
         ICollection<Promotion> listerPromotions();
-        Client creationCompteClient(Client c);
+        Client creationCompteClient(ClientModel c);
         Client modifierCompte(Client c);
         Adresse ajouterAdresse(Adresse a);
         void supprimerAdresse(int AdresseId);

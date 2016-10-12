@@ -10,7 +10,8 @@ namespace Fil_rouge_evente.Dao
 {
     public interface IDAO
     {
-        Client creationCompteClient(Client c);
+        Client creationCompteClient(ClientModel c);
+        ICollection<Role> getRole(Utilisateur u);
         Administrateur creationCompteAdmin(Administrateur a);
         Administrateur modifierCompteAdmin(Administrateur a);
         void suppressionCompte(int UtilisateurId);
@@ -78,7 +79,6 @@ namespace Fil_rouge_evente.Dao
 
         Role ajouterRole(Role r);
         ICollection<Role> listerRoles();
-        ICollection<Role> getRole(Utilisateur u);
 
         AdresseClient ajouterAdresseClient(int AdresseId, int UtilisateurId);
         ICollection<AdresseClientModel> listerAdresseClient();

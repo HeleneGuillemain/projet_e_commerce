@@ -18,8 +18,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterCatalogue()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 return View();
             }

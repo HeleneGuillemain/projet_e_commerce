@@ -18,8 +18,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterFidelite()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 return View();
             }
@@ -37,8 +36,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult listerFidelite()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.listerFidelite();
                 return View(res);
@@ -51,8 +49,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult supprimerFidelite(int FideliteId)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 iadmin.supprimerFidelite(FideliteId);
                 return RedirectToAction("listerFidelite");
@@ -65,8 +62,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult afficherFidelite(int FideliteId)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.afficherFidelite(FideliteId);
                 return View(res);
@@ -79,8 +75,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult modifierFidelite(int FideliteId)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.afficherFidelite(FideliteId);
                 return View(res);
