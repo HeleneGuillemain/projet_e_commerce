@@ -14,7 +14,6 @@ namespace Fil_rouge_evente.Metier
         public string NomProprietaire { get; set; }
         [Required(ErrorMessage ="Ce champ est obligatoire")]
         [Display(Name ="Numéro de la carte")]
-        [Column("NumeroCarte",TypeName = "int")]
         public string NumeroCarte { get; set; }
         [Required(ErrorMessage ="Ce champ est obligatoire")]
         [Display(Name ="Date d'expiration")]

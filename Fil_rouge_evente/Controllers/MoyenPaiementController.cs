@@ -17,7 +17,7 @@ namespace Fil_rouge_evente.Controllers
             return View();
         }
 
-        public ActionResult ajouterMoyenPaiement()
+        public ActionResult AjouterMoyenPaiement()
         {
             if (Convert.ToInt32(Session["RoleId"]) == 1)
             {

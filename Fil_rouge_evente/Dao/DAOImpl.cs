@@ -76,6 +76,7 @@ namespace Fil_rouge_evente.Dao
                 c.NombrePoints = monclient.NombrePoints;
                 c.NumeroCarteFidelite = monclient.NumeroCarteFidelite;
                 c.password = monclient.password;
+                c.login = monclient.login;
                 c.Prenom = monclient.Prenom;
                 c.RoleId = r.RoleId;
 
