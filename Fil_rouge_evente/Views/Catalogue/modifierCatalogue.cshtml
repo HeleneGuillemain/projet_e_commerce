@@ -1,0 +1,15 @@
+﻿@model Fil_rouge_evente.Metier.Catalogue
+@{
+    ViewBag.Title = "ModifierCatalogue";
+}
+
+<h2>ModifierCatalogue</h2>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm("ModifierCatalogue", "Catalogue", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.CatalogueId)
+        <span>@Html.DisplayNameFor(model => model.Nom) : </span><span>@Html.TextBoxFor(model => model.Nom)</span><span>@Html.ValidationMessageFor(model => model.Nom)</span><br />
+        <button type="submit">Mettre à jour</button>
+    }
+</div>

@@ -20,6 +20,8 @@ namespace Fil_rouge_evente.Metier
         void supprimerPromotion(int PromotionId);
         Promotion modifierPromotion(Promotion p);
         Catalogue ajouterCatalogue(Catalogue c);
+        Catalogue modifierCatalogue(Catalogue c);
+        Catalogue afficherCatalogue(int CatalogueId);
         void supprimerCatalogue(int CatalogueId);
         ICollection<Catalogue> listerCatalogue();
         ICollection<Produit> rechercherProduitById(int id);

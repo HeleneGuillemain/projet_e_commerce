@@ -76,6 +76,16 @@ namespace Fil_rouge_evente.Metier
             return idao.ajouterCatalogue(c);
         }
 
+        public Catalogue modifierCatalogue(Catalogue c)
+        {
+            return idao.modifierCatalogue(c);
+        }
+
+        public Catalogue afficherCatalogue(int CatalogueId)
+        {
+            return idao.afficherCatalogue(CatalogueId);
+        }
+
         public void supprimerCatalogue(int CatalogueId)
         {
             idao.supprimerCatalogue(CatalogueId);
