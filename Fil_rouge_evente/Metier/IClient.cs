@@ -35,6 +35,11 @@ namespace Fil_rouge_evente.Metier
         AdresseClient ajouterAdresseClient(int AdresseId, int UtilisateurId);
         Adresse modifierAdresse(Adresse a);
         Adresse afficherAdresse(int AdresseId);
-
+        CarteBancaire ajouterCarteBancaire(CarteBancaire cb);
+        Cheque ajouterCheque(Cheque c);
+        Virement ajouterVirement(Virement v);
+        Facture ajouterFacture(Facture f);
+        void supprimerMoyenPaiement(int MoyenPaiementId);
+        ICollection<CommandeMoyenPaiementModel> afficherCommandeMoyenPaiement(int id);
     }
 }

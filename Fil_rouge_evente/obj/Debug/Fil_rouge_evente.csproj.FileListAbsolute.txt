@@ -473,3 +473,4 @@ C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fi
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_champ_actif_moyenPaiement.resources
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_champ_dateCommande.resources
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_enum_typePaiement.resources
+C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.chgt_nom_numeroCompte_numeroCarte.resources

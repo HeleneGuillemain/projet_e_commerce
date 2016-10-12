@@ -186,5 +186,35 @@ namespace Fil_rouge_evente.Metier
         {
             return idao.afficherAdresse(AdresseId);
         }
+
+        public CarteBancaire ajouterCarteBancaire(CarteBancaire cb)
+        {
+            return idao.ajouterCarteBancaire(cb);
+        }
+
+        public Cheque ajouterCheque(Cheque c)
+        {
+            return idao.ajouterCheque(c);
+        }
+
+        public Virement ajouterVirement(Virement v)
+        {
+            return idao.ajouterVirement(v);
+        }
+
+        public Facture ajouterFacture(Facture f)
+        {
+            return idao.ajouterFacture(f);
+        }
+
+        public void supprimerMoyenPaiement(int MoyenPaiementId)
+        {
+            idao.supprimerMoyenPaiement(MoyenPaiementId);
+        }
+
+        public ICollection<CommandeMoyenPaiementModel> afficherCommandeMoyenPaiement(int id)
+        {
+            return afficherCommandeMoyenPaiement(id);
+        }
     }
 }

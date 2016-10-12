@@ -164,6 +164,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\FideliteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoyenPaiementController.cs" />
     <Compile Include="Controllers\ProduitController.cs" />
     <Compile Include="Controllers\PromotionController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -226,6 +227,10 @@
     <Compile Include="Migrations\201610121215505_ajout_enum_typePaiement.cs" />
     <Compile Include="Migrations\201610121215505_ajout_enum_typePaiement.Designer.cs">
       <DependentUpon>201610121215505_ajout_enum_typePaiement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610121259031_chgt_nom_numeroCompte_numeroCarte.cs" />
+    <Compile Include="Migrations\201610121259031_chgt_nom_numeroCompte_numeroCarte.Designer.cs">
+      <DependentUpon>201610121259031_chgt_nom_numeroCompte_numeroCarte.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdresseClientModel.cs" />
@@ -309,6 +314,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MoyenPaiement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610121215505_ajout_enum_typePaiement.resx">
       <DependentUpon>201610121215505_ajout_enum_typePaiement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610121259031_chgt_nom_numeroCompte_numeroCarte.resx">
+      <DependentUpon>201610121259031_chgt_nom_numeroCompte_numeroCarte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
