@@ -41,8 +41,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ListerProduitsAdmin()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            
+            if ((Session["UtilisateurId"] != null) && ((int)Session["RoleId"] == 2))
             {
                 var res = iadmin.listerProduitCatalogue();
                 return View(res);
