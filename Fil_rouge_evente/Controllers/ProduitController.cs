@@ -34,7 +34,8 @@ namespace Fil_rouge_evente.Controllers
         [HttpPost]
         public ActionResult AjouterProduit(Produit p)
         {
-            iadmin.ajouterProduit(p);
+            
+                iadmin.ajouterProduit(p);
             ViewBag.CatalogueId = new SelectList(iadmin.listerCatalogue(), "CatalogueId", "Nom");
             return RedirectToAction("ListerProduitsAdmin");
         }
@@ -78,8 +79,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult SupprimerProduit(int id)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 iadmin.supprimerProduit(id);
                 return RedirectToAction("ListerProduitsAdmin");
@@ -92,8 +92,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult RechercherProduitParNom()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.listerProduits();
                 return View(res);
@@ -113,8 +112,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult RechercherProduitParId()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.listerProduits();
                 return View(res);
@@ -135,8 +133,7 @@ namespace Fil_rouge_evente.Controllers
       
         public ActionResult AfficherProduit(int id)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.afficherProduit(id);
                 return View(res);
@@ -149,8 +146,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterPromotion()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 return View();
             }
@@ -170,8 +166,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult supprimerPromotion(int PromotionId)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 iadmin.supprimerPromotion(PromotionId);
                 return RedirectToAction("afficherPromotionProduit");
@@ -184,8 +179,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult afficherPromotionProduit()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
             var res = iadmin.afficherPromotionProduit();
             return View(res);

@@ -18,8 +18,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterAnniversaire()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 return View();
             }
@@ -38,8 +38,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult listerAnniversaires()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.listerAnniversaires();
                 return View(res);
@@ -52,8 +52,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult supprimerAnniversaire(int AnniversaireId)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 iadmin.supprimerAnniversaire(AnniversaireId);
                 return RedirectToAction("listerAnniversaires");
@@ -66,8 +66,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult modifierAnniversaire(int AnniversaireId)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.afficherAnniversaire(AnniversaireId);
                 return View(res);

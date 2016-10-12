@@ -1,4 +1,5 @@
 ﻿using Fil_rouge_evente.Metier;
+using Fil_rouge_evente.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Fil_rouge_evente.Controllers
         }
 
         [HttpPost]
-        public ActionResult Inscription(Client c)
+        public ActionResult Inscription(ClientModel c)
         {
             iclient.creationCompteClient(c);
             return RedirectToAction("Connexion");
@@ -41,8 +42,12 @@ namespace Fil_rouge_evente.Controllers
 
             if(monUser != null)
             {
+                ICollection<Role> resultat = iclient.getRole(monUser);
+                int res = 0;
+                foreach (var p in resultat)
+                    res = p.Droit;
+                Session["RoleId"] = res;
                 Session["ClientId"] = monUser.UtilisateurId;
-                Session["RoleId"] = monUser.RoleId;
                 Session["Nom"] = monUser.Nom;
                 Session["Prenom"] = monUser.Prenom;
                 return RedirectToAction("LoggedIn");
@@ -56,8 +61,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult LoggedIn()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["ClientId"] != null) && (roleid == 1))
+            if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
                 return View();
             }
@@ -99,8 +103,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult AjouterAdresse()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["ClientId"] != null) && (roleid == 1))
+            if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
                 return View();
             }
@@ -122,8 +125,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult SupprimerAdresse(int id)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["ClientId"] != null) && (roleid == 1))
+            if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
                 iclient.supprimerAdresse(id);
                 return RedirectToAction("AfficherAdresses");
@@ -136,8 +138,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult AfficherAdresses()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if((Session["ClientId"] != null) && (roleid == 1))
+            if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
                 var clientid = (int)(Session["ClientId"]);
                 var res = iclient.listerAdresse(clientid);
@@ -151,8 +152,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult modifierAdresse(int id)
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["ClientId"] != null) && (roleid == 1))
+            if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
                 var res = iclient.afficherAdresse(id);
                 return View(res);

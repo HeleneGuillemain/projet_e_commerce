@@ -18,7 +18,10 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult AjouterRole()
         {
-            return View();
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
+
+                return View();
+            else return RedirectToAction("LoginAdmin", "Administrateur");
         }
 
         [HttpPost]
@@ -30,8 +33,12 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ListerRoles()
         {
-            var res = iadmin.listerRoles();
-            return View(res);
+            if (Convert.ToInt32(Session["RoleId"]) == 2)
+            {
+                var res = iadmin.listerRoles();
+                return View(res);
+            }
+            else return RedirectToAction("LoginAdmin", "Administrateur");
         }
     }
 }

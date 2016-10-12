@@ -5,23 +5,96 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using static Fil_rouge_evente.Metier.Client;
 
 namespace Fil_rouge_evente.Dao
 {
     public class DAOImpl: IDAO
     {
-        public Client creationCompteClient(Client c)
+        public Client creationCompteClient(ClientModel monclient)
         {
-            using(var db = new Dao.ProjetContext())
+            using (var db = new Dao.ProjetContext())
             {
-                c.RoleId = 1;
-                c.NombrePoints = 0;
-                c.CompteASupprimer = false;
-                c.Actif = true;
+
+                //ajout de l'adresse rentrée par l'utilisateur (client)
+
+                Adresse adrClient = new Adresse();
+                adrClient.NomRue = monclient.NomDeRue;
+                adrClient.NumeroRue = monclient.NumeroRue;
+                adrClient.CodePostal = monclient.CodePostal;
+                adrClient.Ville = monclient.Ville;
+                adrClient.Pays = monclient.Pays;
+
+                switch (monclient.typeadresse)
+                {
+                    case ClientModel.TypeAdresse.Livraison:
+                        adrClient.typeadresse = Adresse.TypeAdresse.Livraison;
+                        break;
+                    case ClientModel.TypeAdresse.Facturation:
+                        adrClient.typeadresse = Adresse.TypeAdresse.Facturation;
+                        break;
+                    default:
+                        break;
+                }
+
+                db.adresses.Add(adrClient);
+                db.SaveChanges();
+                //ajout du role attribué  a l'utilisateur (client) par l admin
+                Role r = new Role();
+                r.Droit = 1;     // 1 : droit utilisateur
+
+                db.roles.Add(r);
+                db.SaveChanges();
+
+
+
+                Client c = new Client();
+                c.clientAdresses = adrClient.adresseClients;
+                switch (monclient.civilite)
+                {
+                    case ClientModel.Civilite.Mademoiselle:
+                        c.civilite = Civilite.Mademoiselle;
+                        break;
+                    case ClientModel.Civilite.Madame:
+                        c.civilite = Civilite.Madame;
+                        break;
+                    case ClientModel.Civilite.Monsieur:
+                        c.civilite = Civilite.Monsieur;
+                        break;
+                    default:
+                        break;
+                }
+                monclient.CompteActif = true;
+                monclient.CompteASupprimer = false;
+                c.Actif = monclient.CompteActif;
+                c.CompteASupprimer = monclient.CompteASupprimer;
+                c.confirmPassword = monclient.confirmPassword;
+                c.DateNaissance = monclient.DateNaissance;
+                c.Email = monclient.Email;
+                c.login = monclient.login;
+                c.Nom = monclient.Nom;
+                c.NombrePoints = monclient.NombrePoints;
+                c.NumeroCarteFidelite = monclient.NumeroCarteFidelite;
+                c.password = monclient.password;
+                c.Prenom = monclient.Prenom;
+                c.RoleId = r.RoleId;
+
+
                 db.utilisateurs.Add(c);
 
                 db.SaveChanges();
                 return c;
+            }
+        }
+
+        public ICollection<Role> getRole(Utilisateur u)
+        {
+            using (var edb = new ProjetContext())
+            {
+                var req = from r in edb.roles
+                          where (u.RoleId == r.RoleId)
+                          select r;
+                return req.ToList();
             }
         }
 
@@ -809,15 +882,5 @@ namespace Fil_rouge_evente.Dao
             }
         }
 
-        public ICollection<Role> getRole(Utilisateur u)
-        {
-            using (var edb = new ProjetContext())
-            {
-                var req = from r in edb.roles
-                          where (u.RoleId == r.RoleId)
-                          select r;
-                return req.ToList();
-            }
-        }
     }
 }

@@ -15,6 +15,11 @@ namespace Fil_rouge_evente.Metier
             return idao.rechercherProduitsByName(Nom);
         }
 
+        public ICollection<Role> getRole(Utilisateur u)
+        {
+            return idao.getRole(u);
+        }
+
         public ICollection<Produit> rechercherProduits(decimal PrixMin, decimal PrixMax)
         {
             return idao.rechercherProduits(PrixMin, PrixMax);
@@ -25,7 +30,7 @@ namespace Fil_rouge_evente.Metier
             return idao.rechercherProduitsByCategorie(Categorie);
         }
 
-        public Client creationCompteClient(Client c)
+        public Client creationCompteClient(ClientModel c)
         {
 
             return idao.creationCompteClient(c);

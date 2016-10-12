@@ -10,15 +10,15 @@
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(model => model.RoleId)</th>
-                <th>@Html.DisplayNameFor(model => model.nomRole)</th>
+                <th>@Html.DisplayNameFor(model => model.Droit)</th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var m in Model)
+            @foreach (var m in Model)
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => m.RoleId)</td>
-                    <td>@Html.DisplayFor(modelItem => m.nomRole)</td>
+                    <td>@Html.DisplayFor(modelItem => m.Droit)</td>
                 </tr>
             }
         </tbody>
