@@ -27,7 +27,7 @@ namespace Fil_rouge_evente.Controllers
                 var res = iadmin.afficherPromotionProduit();
                 return View(res);
             }
-            else return RedirectToAction("Login", "Administrateur");
+            else return RedirectToAction("loginAdmin", "Administrateur");
 
         }
     }

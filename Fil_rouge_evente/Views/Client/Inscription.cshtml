@@ -13,7 +13,6 @@
         <span>@Html.DisplayNameFor(model => model.Prenom) : </span><span>@Html.TextBoxFor(model => model.Prenom)</span><span>@Html.ValidationMessageFor(model => model.Prenom)</span><br />
         <span>@Html.DisplayNameFor(model => model.Email) : </span><span>@Html.TextBoxFor(model => model.Email)</span><span>@Html.ValidationMessageFor(model => model.Email)</span><br />
         <span>@Html.DisplayNameFor(model => model.DateNaissance) : </span><span>@Html.TextBoxFor(model => model.DateNaissance, new { @class = "form-control datecontrol", type = "date" })</span><span>@Html.ValidationMessageFor(model => model.DateNaissance)</span>
-        <span>@Html.DisplayNameFor(model => model.login) : </span><span>@Html.TextBoxFor(model => model.login)</span><span>@Html.ValidationMessageFor(model => model.login)</span><br />
         <span>@Html.DisplayNameFor(model => model.password) : </span><span>@Html.PasswordFor(model => model.password)</span><span>@Html.ValidationMessageFor(model => model.password)</span><br />
         <span>@Html.DisplayNameFor(model => model.confirmPassword) : </span><span>@Html.PasswordFor(model => model.confirmPassword)</span><span>@Html.ValidationMessageFor(model => model.confirmPassword)</span><br />
         <span>@Html.DisplayNameFor(model => model.typeadresse) : </span><span>@Html.EnumDropDownListFor(model => model.typeadresse)</span><br />

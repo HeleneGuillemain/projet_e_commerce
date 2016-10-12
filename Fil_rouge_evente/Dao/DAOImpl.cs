@@ -76,7 +76,6 @@ namespace Fil_rouge_evente.Dao
                 c.NombrePoints = monclient.NombrePoints;
                 c.NumeroCarteFidelite = monclient.NumeroCarteFidelite;
                 c.password = monclient.password;
-                c.login = monclient.login;
                 c.Prenom = monclient.Prenom;
                 c.RoleId = r.RoleId;
 
@@ -448,15 +447,50 @@ namespace Fil_rouge_evente.Dao
             }
         }
 
-        public ICollection<Utilisateur> listerClient()
+        public ICollection<Client> listerClient()
         {
             using (var db = new Dao.ProjetContext())
             {
-                var res = from c in db.utilisateurs
-                          where c.RoleId == 2
-                          select c;
+                return db.clients.ToList();
+            }
+        }
+
+        public ICollection<Client> rechercherClientByName(string name)
+        {
+            using (var db = new Dao.ProjetContext())
+            {
+                var res = from u in db.clients
+                          where u.Nom.Contains(name)
+                          select u;
 
                 return res.ToList();
+            }
+        }
+
+        public void changerEtatClient(int idClient)
+        {
+            using (var db = new Dao.ProjetContext())
+            {
+                Client c = db.clients.Find(idClient);
+                if (c.Actif == false)
+                {
+                    db.Entry(c).Entity.Actif = true;
+                }
+                else
+                {
+                    db.Entry(c).Entity.Actif = false;
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public void desactiverMonCompte(int idClient)
+        {
+            using (var db = new Dao.ProjetContext())
+            {
+                Client c = db.clients.Find(idClient);
+                c.CompteASupprimer = true;
+                db.SaveChanges();
             }
         }
 
@@ -702,7 +736,7 @@ namespace Fil_rouge_evente.Dao
             using (var db = new ProjetContext())
             {
                 var usr = from u in db.utilisateurs
-                          where u.Email == ut.Email && u.password == ut.password
+                          where u.Email == ut.Email && u.password == ut.password & u.Actif == true
                           select u;
 
                 return usr.FirstOrDefault();

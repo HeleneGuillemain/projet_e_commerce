@@ -20,9 +20,6 @@ namespace Fil_rouge_evente.Metier
         [DataType(DataType.EmailAddress,ErrorMessage ="Ce champ doit contenir un Email valide")]
         public string Email { get; set; }
         
-        [Required(ErrorMessage = "Le champ LOGIN est obligatoire")]
-        [Display(Name ="Login")]
-        public string login { get; set; }
         [Required(ErrorMessage = "Le champ PASSWORD est obligatoire")]
         [Display(Name ="Mot de passe")]
         [DataType(DataType.Password)]
@@ -32,7 +29,7 @@ namespace Fil_rouge_evente.Metier
         [Compare("password", ErrorMessage = "Confirmez votre mot de passe")]
         [DataType(DataType.Password)]
         public string confirmPassword { get; set; }
-
+        public bool Actif { get; set; }
 
         public virtual ICollection<Historique_UtilisateurProduit> historiques_UtilisateurProduit { get; set; }
         public int RoleId { get; set; }

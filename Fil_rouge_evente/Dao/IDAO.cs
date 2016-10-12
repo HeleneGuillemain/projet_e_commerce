@@ -35,8 +35,10 @@ namespace Fil_rouge_evente.Dao
         ICollection<Utilisateur> listerAdministrateur();
         ICollection<Utilisateur> rechercherUtilisateurByName(string name);
         Utilisateur rechercherUtilisateurById(int utilisateurId);
-        ICollection<Utilisateur> listerClient();
-        
+        ICollection<Client> listerClient();
+        ICollection<Client> rechercherClientByName(string name);
+        void changerEtatClient(int idClient);
+        void desactiverMonCompte(int idClient);
         Catalogue ajouterCatalogue(Catalogue c);
         Catalogue modifierCatalogue(Catalogue c);
         void supprimerCatalogue(int CatalogueId);

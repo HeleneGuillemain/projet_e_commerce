@@ -11,7 +11,6 @@ namespace Fil_rouge_evente.Metier
         [Required(ErrorMessage ="La date de naissance est obligatoire")]
         [Display(Name ="Date de naissance")]
         public DateTime DateNaissance { get; set; }
-        public bool Actif { get; set; }
         public int? NumeroCarteFidelite { get; set; }
         public int NombrePoints { get; set; }
         public bool CompteASupprimer { get; set; }

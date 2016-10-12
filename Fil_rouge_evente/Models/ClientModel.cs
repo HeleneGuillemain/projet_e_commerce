@@ -12,7 +12,6 @@ namespace Fil_rouge_evente.Models
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public DateTime DateNaissance { get; set; }
-        public string login { get; set; }
         public string password { get; set; }
         public string confirmPassword { get; set; }
         public string Email { get; set; }

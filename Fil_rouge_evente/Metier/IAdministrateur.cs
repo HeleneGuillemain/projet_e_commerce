@@ -42,5 +42,8 @@ namespace Fil_rouge_evente.Metier
         void supprimerFidelite(int FideliteId);
         Fidelite modifierFidelite(Fidelite f);
         ICollection<Fidelite> listerFidelite();
+        ICollection<Client> listerClient();
+        ICollection<Client> rechercherClientByName(string name);
+        void changerEtatClient(int idClient);
     }
 }

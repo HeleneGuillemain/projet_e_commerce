@@ -87,6 +87,24 @@ namespace Fil_rouge_evente.Controllers
             return RedirectToAction("loginAdmin");
         }
 
+        public ActionResult listerClient()
+        {
+            ICollection<Client> res = iadmin.listerClient();
+            ViewBag.Message = "Liste des clients";
+            return View(res);
+        }
 
+        [HttpPost]
+        public ActionResult listerClient(string nom)
+        {
+            ICollection<Client> res = iadmin.rechercherClientByName(nom);
+            return View(res);
+        }
+
+        public ActionResult changerEtatClient(int id)
+        {
+            iadmin.changerEtatClient(id);
+            return RedirectToAction("listerClient");
+        }
     }
 }

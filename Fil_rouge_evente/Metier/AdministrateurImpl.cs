@@ -219,5 +219,20 @@ namespace Fil_rouge_evente.Metier
         {
             return idao.getRole(u);
         }
+
+        public ICollection<Client> listerClient()
+        {
+            return idao.listerClient();
+        }
+
+        public ICollection<Client> rechercherClientByName(string name)
+        {
+            return idao.rechercherClientByName(name);
+        }
+
+        public void changerEtatClient(int idClient)
+        {
+            idao.changerEtatClient(idClient);
+        }
     }
 }
