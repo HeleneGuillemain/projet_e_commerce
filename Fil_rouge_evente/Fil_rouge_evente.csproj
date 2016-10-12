@@ -200,6 +200,7 @@
     <Compile Include="Metier\Promotion.cs" />
     <Compile Include="Metier\Role.cs" />
     <Compile Include="Metier\StatutCommande.cs" />
+    <Compile Include="Metier\Test.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Metier\UtilisateurImpl.cs" />
     <Compile Include="Migrations\201610111326078_updateadmin.cs" />
