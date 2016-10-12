@@ -72,7 +72,6 @@ namespace Fil_rouge_evente.Dao
                 c.confirmPassword = monclient.confirmPassword;
                 c.DateNaissance = monclient.DateNaissance;
                 c.Email = monclient.Email;
-                c.login = monclient.login;
                 c.Nom = monclient.Nom;
                 c.NombrePoints = monclient.NombrePoints;
                 c.NumeroCarteFidelite = monclient.NumeroCarteFidelite;
@@ -180,6 +179,16 @@ namespace Fil_rouge_evente.Dao
             using (var db = new Dao.ProjetContext())
             {
                 db.catalogues.Add(c);
+                db.SaveChanges();
+                return c;
+            }
+        }
+
+        public Catalogue modifierCatalogue(Catalogue c)
+        {
+            using (var db = new Dao.ProjetContext())
+            {
+                db.Entry(c).State = EntityState.Modified;
                 db.SaveChanges();
                 return c;
             }
@@ -692,7 +701,7 @@ namespace Fil_rouge_evente.Dao
             using (var db = new ProjetContext())
             {
                 var usr = from u in db.utilisateurs
-                          where u.login == ut.login && u.password == ut.password
+                          where u.Email == ut.Email && u.password == ut.password
                           select u;
 
                 return usr.FirstOrDefault();

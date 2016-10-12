@@ -48,9 +48,6 @@ namespace Fil_rouge_evente.Controllers
         [HttpPost]
         public ActionResult loginAdmin(Utilisateur u)
         {
-
-
-
             var user = iadmin.connexionCompte(u);
             if (user != null)
             {

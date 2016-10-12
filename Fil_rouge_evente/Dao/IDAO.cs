@@ -38,6 +38,7 @@ namespace Fil_rouge_evente.Dao
         ICollection<Utilisateur> listerClient();
         
         Catalogue ajouterCatalogue(Catalogue c);
+        Catalogue modifierCatalogue(Catalogue c);
         void supprimerCatalogue(int CatalogueId);
         Catalogue afficherCatalogue(int CatalogueId);
         ICollection<Catalogue> listerCatalogue();

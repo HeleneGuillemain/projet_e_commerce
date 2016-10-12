@@ -467,10 +467,5 @@ C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\bin\fr\Syste
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.csprojResolveAssemblyReference.cache
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.dll
 C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.pdb
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.bdd.resources
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.csproj.GenerateResource.Cache
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_heritage_moyenPaiement.resources
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_champ_actif_moyenPaiement.resources
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_champ_dateCommande.resources
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.ajout_enum_typePaiement.resources
-C:\Users\Adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.chgt_nom_numeroCompte_numeroCarte.resources
+C:\Users\adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.Migrations.FirstMigration.resources
+C:\Users\adminl\Documents\GitHub\projet_e_commerce\Fil_rouge_evente\obj\Debug\Fil_rouge_evente.csproj.GenerateResource.Cache
