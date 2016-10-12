@@ -182,11 +182,14 @@
     <Compile Include="Metier\Anniversaire.cs" />
     <Compile Include="Metier\AnniversaireClient.cs" />
     <Compile Include="Metier\Avis_ClientProduit.cs" />
+    <Compile Include="Metier\CarteBancaire.cs" />
     <Compile Include="Metier\Catalogue.cs" />
+    <Compile Include="Metier\Cheque.cs" />
     <Compile Include="Metier\Client.cs" />
     <Compile Include="Metier\ClientImpl.cs" />
     <Compile Include="Metier\Commande.cs" />
     <Compile Include="Metier\CommandeProduit.cs" />
+    <Compile Include="Metier\Facture.cs" />
     <Compile Include="Metier\Fidelite.cs" />
     <Compile Include="Metier\FideliteClient.cs" />
     <Compile Include="Metier\Historique_UtilisateurProduit.cs" />
@@ -203,17 +206,31 @@
     <Compile Include="Metier\Test.cs" />
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Metier\UtilisateurImpl.cs" />
-    <Compile Include="Migrations\201610111326078_updateadmin.cs" />
-    <Compile Include="Migrations\201610111326078_updateadmin.Designer.cs">
-      <DependentUpon>201610111326078_updateadmin.cs</DependentUpon>
+    <Compile Include="Metier\Virement.cs" />
+    <Compile Include="Migrations\201610121009246_bdd.cs" />
+    <Compile Include="Migrations\201610121009246_bdd.Designer.cs">
+      <DependentUpon>201610121009246_bdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610111330596_updaterole2.cs" />
-    <Compile Include="Migrations\201610111330596_updaterole2.Designer.cs">
-      <DependentUpon>201610111330596_updaterole2.cs</DependentUpon>
+    <Compile Include="Migrations\201610121014528_ajout_heritage_moyenPaiement.cs" />
+    <Compile Include="Migrations\201610121014528_ajout_heritage_moyenPaiement.Designer.cs">
+      <DependentUpon>201610121014528_ajout_heritage_moyenPaiement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610121021341_ajout_champ_actif_moyenPaiement.cs" />
+    <Compile Include="Migrations\201610121021341_ajout_champ_actif_moyenPaiement.Designer.cs">
+      <DependentUpon>201610121021341_ajout_champ_actif_moyenPaiement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610121102279_ajout_champ_dateCommande.cs" />
+    <Compile Include="Migrations\201610121102279_ajout_champ_dateCommande.Designer.cs">
+      <DependentUpon>201610121102279_ajout_champ_dateCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610121215505_ajout_enum_typePaiement.cs" />
+    <Compile Include="Migrations\201610121215505_ajout_enum_typePaiement.Designer.cs">
+      <DependentUpon>201610121215505_ajout_enum_typePaiement.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdresseClientModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\CommandeMoyenPaiementModel.cs" />
     <Compile Include="Models\ProduitCatalogueModel.cs" />
     <Compile Include="Models\PromotionProduit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -302,11 +319,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610111326078_updateadmin.resx">
-      <DependentUpon>201610111326078_updateadmin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610121009246_bdd.resx">
+      <DependentUpon>201610121009246_bdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610111330596_updaterole2.resx">
-      <DependentUpon>201610111330596_updaterole2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610121014528_ajout_heritage_moyenPaiement.resx">
+      <DependentUpon>201610121014528_ajout_heritage_moyenPaiement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610121021341_ajout_champ_actif_moyenPaiement.resx">
+      <DependentUpon>201610121021341_ajout_champ_actif_moyenPaiement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610121102279_ajout_champ_dateCommande.resx">
+      <DependentUpon>201610121102279_ajout_champ_dateCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610121215505_ajout_enum_typePaiement.resx">
+      <DependentUpon>201610121215505_ajout_enum_typePaiement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +10,8 @@ namespace Fil_rouge_evente.Metier
     {
         public int CommandeId { get; set; }
         public string Commentaire { get; set; }
+        [Required]
+        public DateTime DateCommande { get; set; }
 
         public int UtilisateurId { get; set; }
         public virtual Client client { get; set; }

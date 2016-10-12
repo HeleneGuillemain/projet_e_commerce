@@ -103,5 +103,13 @@ namespace Fil_rouge_evente.Dao
         Fidelite modifierFidelite(Fidelite f);
         Fidelite afficherFidelite(int FideliteId);
         ICollection<Fidelite> listerFidelite();
+
+        CarteBancaire ajouterCarteBancaire(CarteBancaire cb);
+        Cheque ajouterCheque(Cheque c);
+        Virement ajouterVirement(Virement v);
+        Facture ajouterFacture(Facture f);
+        void supprimerMoyenPaiement(int MoyenPaiementId);
+        ICollection<CommandeMoyenPaiementModel> afficherCommandeMoyenPaiement(int id);
+        
     }
 }

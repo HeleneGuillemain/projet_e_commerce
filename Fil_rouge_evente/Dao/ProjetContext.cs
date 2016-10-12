@@ -36,5 +36,9 @@ namespace Fil_rouge_evente.Dao
         public DbSet<Utilisateur> utilisateurs { get; set; }
 
         public DbSet<Client> clients { get; set; }
+        public DbSet<CarteBancaire> carteBancaires { get; set; }
+        public DbSet<Cheque> cheques { get; set; }
+        public DbSet<Facture> factures { get; set; }
+        public DbSet<Virement> virements { get; set; }
     }
 }

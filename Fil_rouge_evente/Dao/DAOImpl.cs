@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using static Fil_rouge_evente.Metier.Client;
+using static Fil_rouge_evente.Metier.MoyenPaiement;
 
 namespace Fil_rouge_evente.Dao
 {
@@ -882,5 +883,77 @@ namespace Fil_rouge_evente.Dao
             }
         }
 
+       
+
+        public void supprimerMoyenPaiement(int MoyenPaiementId)
+        {
+            using (var db = new ProjetContext())
+            {
+                var res = db.moyenPaiements.Find(MoyenPaiementId);
+                db.moyenPaiements.Remove(res);
+            }
+        }
+
+        public CarteBancaire ajouterCarteBancaire(CarteBancaire cb)
+        {
+            using (var db = new ProjetContext())
+            {
+                db.carteBancaires.Add(cb);
+                cb.TypePaiement = typePaiement.CarteBancaire;
+                db.SaveChanges();
+                return cb;
+            }
+        }
+
+        public Cheque ajouterCheque(Cheque c)
+        {
+            using (var db = new ProjetContext())
+            {
+                db.cheques.Add(c);
+                c.TypePaiement = typePaiement.Cheque ;
+                db.SaveChanges();
+                return c;
+            }
+        }
+
+        public Virement ajouterVirement(Virement v)
+        {
+            using (var db = new ProjetContext())
+            {
+                db.virements.Add(v);
+                v.TypePaiement = typePaiement.Virement;
+                db.SaveChanges();
+                return v;
+            }
+        }
+
+        public Facture ajouterFacture(Facture f)
+        {
+            using (var db = new ProjetContext())
+            {
+                db.factures.Add(f);
+                f.TypePaiement = typePaiement.Facture;
+                db.SaveChanges();
+                return f;
+            }
+        }
+
+        public ICollection<CommandeMoyenPaiementModel> afficherCommandeMoyenPaiement(int id)
+        {
+            using (var db = new ProjetContext())
+            {
+                var res = from c in db.commandes
+                          join u in db.utilisateurs on c.UtilisateurId equals u.UtilisateurId
+                          join m in db.moyenPaiements on u.UtilisateurId equals m.UtilisateurId
+                          where u.UtilisateurId == id
+                          select new CommandeMoyenPaiementModel
+                          {
+                              TypePaiement = m.TypePaiement,
+                              DateCommande = c.DateCommande
+                          };
+
+                return res.ToList();
+            }
+        }
     }
 }
