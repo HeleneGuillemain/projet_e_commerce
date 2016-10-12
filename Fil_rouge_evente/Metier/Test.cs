@@ -7,5 +7,6 @@ namespace Fil_rouge_evente.Metier
 {
     public class Test
     {
+        public string  TestNom { get; set; }
     }
 }
