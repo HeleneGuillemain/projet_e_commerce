@@ -19,8 +19,8 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult AjouterProduit()
         {
-            var roleid = (int)(Session["RoleId"]);
-            if ((Session["UtilisateurId"] != null) && (roleid == 2))
+          
+            if ((Session["UtilisateurId"] != null) && ((int)(Session["RoleId"]) == 2))
             {
                 ViewBag.CatalogueId = new SelectList(iadmin.listerCatalogue(), "CatalogueId", "Nom");
                 return View();
