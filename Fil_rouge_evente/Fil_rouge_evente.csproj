@@ -212,6 +212,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdresseClientModel.cs" />
+    <Compile Include="Models\ModelAnniversaireClient.cs" />
     <Compile Include="Models\ProduitCatalogueModel.cs" />
     <Compile Include="Models\PromotionProduit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

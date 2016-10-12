@@ -763,6 +763,21 @@ namespace Fil_rouge_evente.Dao
             }
         }
 
+        //public ModelAnniversaireClient AttributionAnniversaire (ModelAnniversaireClient m)
+        //{
+        //    using (var db = new Dao.ProjetContext())
+        //    {
+        //        var requete = from u in db.utilisateurs
+        //                      where m.DateNaissance == u.DateNaissance
+        //                      select u;
+
+        //        if (requete!=null)
+        //        {
+
+        //        }
+        //    }
+        //}
+
         public Fidelite ajouterFidelite(Fidelite f)
         {
             using (var db = new ProjetContext())
