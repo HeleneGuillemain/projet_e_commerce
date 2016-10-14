@@ -1,9 +1,10 @@
-﻿@model Fil_rouge_evente.Metier.Administrateur
+﻿@model Fil_rouge_evente.Metier.Utilisateur
 @{
     ViewBag.Title = "loginAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>loginAdmin</h2>
+<h2>Identifiez-vous</h2>
 @using (Html.BeginForm("loginAdmin", "Administrateur", FormMethod.Post))
 {
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })

@@ -18,6 +18,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult ajouterAdministrateur()
         {
+            ViewBag.Message = "Ajouter admin";
             if (Convert.ToInt32(Session["RoleId"]) == 2)
                 return View();
             else return RedirectToAction("loginAdmin");
@@ -34,6 +35,7 @@ namespace Fil_rouge_evente.Controllers
         {
             if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
+                ViewBag.Message = "Lister admin";
                 var res = iadmin.listerComptes();
                 return View(res);
             }
@@ -42,6 +44,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult loginAdmin()
         {
+            ViewBag.Message = "Connexion";
             return View();
         }
 
@@ -68,7 +71,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult loggedInAdmin()
         {
-
+            ViewBag.Message = "Admin";
             if ((Convert.ToInt32(Session["RoleId"]) == 2))
             {
                 return View();

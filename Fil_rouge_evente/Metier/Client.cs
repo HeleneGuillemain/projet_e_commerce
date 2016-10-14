@@ -14,10 +14,10 @@ namespace Fil_rouge_evente.Metier
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DateNaissance { get; set; }
 
-        [Display(Name = "Numéro carte fidélité")]
+        [Display(Name = "Num. carte fidélité")]
         public int? NumeroCarteFidelite { get; set; }
 
-        [Display(Name = "Nombre de points")]
+        [Display(Name = "Nbre de points")]
         public int NombrePoints { get; set; }
 
         [Display(Name = "Compte à supprimer")]

@@ -208,9 +208,9 @@
     <Compile Include="Metier\Utilisateur.cs" />
     <Compile Include="Metier\UtilisateurImpl.cs" />
     <Compile Include="Metier\Virement.cs" />
-    <Compile Include="Migrations\201610140825044_CreationBDD.cs" />
-    <Compile Include="Migrations\201610140825044_CreationBDD.Designer.cs">
-      <DependentUpon>201610140825044_CreationBDD.cs</DependentUpon>
+    <Compile Include="Migrations\201610141032343_CreationBDD.cs" />
+    <Compile Include="Migrations\201610141032343_CreationBDD.Designer.cs">
+      <DependentUpon>201610141032343_CreationBDD.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdresseClientModel.cs" />
@@ -305,7 +305,6 @@
     <Content Include="Views\Administrateur\ajouterAdministrateur.cshtml" />
     <Content Include="Views\Administrateur\listerAdministrateur.cshtml" />
     <Content Include="Views\Administrateur\loggedInAdmin.cshtml" />
-    <Content Include="Views\Client\Inscription.cshtml" />
     <Content Include="Views\Client\Connexion.cshtml" />
     <Content Include="Views\Client\LoggedIn.cshtml" />
     <Content Include="Views\Client\ModifierCompte.cshtml" />
@@ -332,6 +331,8 @@
     <Content Include="Views\MoyenPaiement\AjouterCheque.cshtml" />
     <Content Include="Views\MoyenPaiement\AjouterFacture.cshtml" />
     <Content Include="Views\MoyenPaiement\AjouterVirement.cshtml" />
+    <Content Include="Views\Client\Inscription.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -345,8 +346,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610140825044_CreationBDD.resx">
-      <DependentUpon>201610140825044_CreationBDD.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610141032343_CreationBDD.resx">
+      <DependentUpon>201610141032343_CreationBDD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

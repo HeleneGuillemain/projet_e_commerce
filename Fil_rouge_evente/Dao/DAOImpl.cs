@@ -110,6 +110,8 @@ namespace Fil_rouge_evente.Dao
 
                 a.RoleId = r.RoleId;
 
+                a.Actif = true;
+
                 db.utilisateurs.Add(a);
                 db.SaveChanges();
                 return a;
