@@ -23,6 +23,7 @@ namespace Fil_rouge_evente.Controllers
             if ((Session["UtilisateurId"] != null) && ((int)(Session["RoleId"]) == 2))
             {
                 ViewBag.CatalogueId = new SelectList(iadmin.listerCatalogue(), "CatalogueId", "Nom");
+                ViewBag.Message = "Ajouter un produit";
                 return View();
             }
             else
@@ -33,9 +34,8 @@ namespace Fil_rouge_evente.Controllers
 
         [HttpPost]
         public ActionResult AjouterProduit(Produit p)
-        {
-            
-                iadmin.ajouterProduit(p);
+        {            
+            iadmin.ajouterProduit(p);
             ViewBag.CatalogueId = new SelectList(iadmin.listerCatalogue(), "CatalogueId", "Nom");
             return RedirectToAction("ListerProduitsAdmin");
         }
@@ -46,6 +46,7 @@ namespace Fil_rouge_evente.Controllers
             if ((Session["UtilisateurId"] != null) && ((int)Session["RoleId"] == 2))
             {
                 var res = iadmin.listerProduitCatalogue();
+                ViewBag.Message = "Lister les produits";
                 return View(res);
             }
             else
@@ -61,6 +62,7 @@ namespace Fil_rouge_evente.Controllers
             {
                 Produit p = iadmin.afficherProduit(id);
                 ViewBag.CatalogueId = new SelectList(iadmin.listerCatalogue(), "CatalogueId", "Nom", p.CatalogueId);
+                ViewBag.Message = "Modifier un produit";
                 return View(p);
             }
             else
@@ -95,6 +97,7 @@ namespace Fil_rouge_evente.Controllers
             if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.listerProduits();
+                ViewBag.Message = "Rechercher produit";
                 return View(res);
             }
             else
@@ -136,6 +139,7 @@ namespace Fil_rouge_evente.Controllers
             if (Convert.ToInt32(Session["RoleId"]) == 2)
             {
                 var res = iadmin.afficherProduit(id);
+                ViewBag.Message = "Afficher un produit";
                 return View(res);
             }
             else
@@ -193,8 +197,8 @@ namespace Fil_rouge_evente.Controllers
         public ActionResult listerProduitUtilisateur()
         {
             var res = iutilisateur.listerProduits();
+            ViewBag.Message = "Lister les produits";
             return View(res);
-
         }
 
         [HttpPost]

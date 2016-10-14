@@ -1,9 +1,9 @@
 ﻿@model Fil_rouge_evente.Models.ClientModel
 @{
-    ViewBag.Title = "Inscription";
+    ViewBag.Title = "Inscrivez-vous";
 }
 
-<h2>Inscription</h2>
+<h2>@ViewBag.Message</h2>
 
 <div>
     @using (Html.BeginForm("Inscription", "Client", FormMethod.Post))

@@ -20,6 +20,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult Inscription()
         {
+            ViewBag.Message = "Inscription";
             return View();
         }
 
@@ -32,6 +33,7 @@ namespace Fil_rouge_evente.Controllers
 
         public ActionResult Connexion()
         {
+            ViewBag.Message = "Connexion";
             return View();
         }
         
@@ -86,6 +88,7 @@ namespace Fil_rouge_evente.Controllers
             if ((Session["ClientId"] != null) && (roleid == 1))
             {
                 var res = iclient.afficherCompte(Convert.ToInt32(Session["ClientId"]));
+                ViewBag.Message = "Modifier mon compte";
                 return View(res);
             }
             else
@@ -105,6 +108,7 @@ namespace Fil_rouge_evente.Controllers
         {
             if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
+                ViewBag.Message = "Ajouter une adresse";
                 return View();
             }
             else
@@ -142,6 +146,7 @@ namespace Fil_rouge_evente.Controllers
             {
                 var clientid = (int)(Session["ClientId"]);
                 var res = iclient.listerAdresse(clientid);
+                ViewBag.Message = "Afficher les adresses";
                 return View(res);
             }
             else
@@ -155,6 +160,7 @@ namespace Fil_rouge_evente.Controllers
             if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
                 var res = iclient.afficherAdresse(id);
+                ViewBag.Message = "Modifier une adresse";
                 return View(res);
             }
             else
