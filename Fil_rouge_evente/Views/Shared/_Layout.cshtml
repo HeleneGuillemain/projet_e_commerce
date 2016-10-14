@@ -8,6 +8,7 @@
     <!--[if lte IE 8]><script src="~/Scripts/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="~/Content/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="~/Content/ie8.css" /><![endif]-->
+    @RenderSection("ExternalCSS", false)
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>

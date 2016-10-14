@@ -65,6 +65,7 @@ namespace Fil_rouge_evente.Controllers
         {
             if (Convert.ToInt32(Session["RoleId"]) == 1)
             {
+                ViewBag.Message = "Mon Compte";
                 return View();
             }
             else

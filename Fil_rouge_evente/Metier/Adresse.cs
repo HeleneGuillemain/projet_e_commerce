@@ -21,6 +21,8 @@ namespace Fil_rouge_evente.Metier
         public string Ville { get; set; }
         public string Pays { get; set; }
         public enum TypeAdresse { Livraison, Facturation };
+
+        [Display(Name = "Type d'adresse")]
         public TypeAdresse typeadresse { get; set; }
 
         public virtual ICollection<AdresseClient> adresseClients { get; set; }
